@@ -41,7 +41,7 @@
     <li class="pub-item-home">
       <span class="pub-authors">{{ delimit $pub.Params.authors ", " }}</span>
       {{ with $pub.Params.year }}<span class="pub-year">({{ . }})</span>{{ end }}
-      <a href="{{ $pub.Permalink }}" class="pub-title">{{ $pub.Title }}</a>
+      {{ if $pub.Params.links }}<a href="{{ (index $pub.Params.links 0).url }}" class="pub-title" target="_blank" rel="noopener">{{ $pub.Title }}</a>{{ else }}<span class="pub-title">{{ $pub.Title }}</span>{{ end }}
       {{ with $pub.Params.venue }}<span class="pub-venue">{{ . }}</span>{{ end }}
     </li>
     {{ end }}

@@ -65,19 +65,16 @@
           <div>
             <span class="pub-authors">{{ delimit .Params.authors ", " }}</span>
             {{ with .Params.year }}<span class="pub-year">({{ . }})</span>{{ end }}
+            {{ if .Params.links }}
+            <a href="{{ (index .Params.links 0).url }}" class="pub-title-link" target="_blank" rel="noopener">{{ .Title }}</a>
+            {{ else }}
             <span class="pub-title-link">{{ .Title }}</span>
+            {{ end }}
             {{ with .Params.status }}<span class="pub-status-chip">{{ . }}</span>{{ end }}
           </div>
           <div class="pub-meta">
             {{ with .Params.venue }}{{ . }}{{ end }}
           </div>
-          {{ with .Params.links }}
-          <div class="pub-links">
-            {{ range . }}
-            <a href="{{ .url | relURL }}" class="pub-link-chip"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a>
-            {{ end }}
-          </div>
-          {{ end }}
         </li>
         {{ end }}
       </ul>

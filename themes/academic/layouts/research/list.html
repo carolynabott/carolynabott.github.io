@@ -65,7 +65,7 @@
           <div>
             <span class="pub-authors">{{ delimit .Params.authors ", " }}</span>
             {{ with .Params.year }}<span class="pub-year">({{ . }})</span>{{ end }}
-            <a href="{{ .Permalink }}" class="pub-title-link">{{ .Title }}</a>
+            <span class="pub-title-link">{{ .Title }}</span>
             {{ with .Params.status }}<span class="pub-status-chip">{{ . }}</span>{{ end }}
           </div>
           <div class="pub-meta">

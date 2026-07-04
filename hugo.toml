@@ -1,4 +1,4 @@
-baseURL = "https://carolynabott.github.io/home/"
+baseURL = "https://carolynabott.github.io/"
 languageCode = "en-us"
 title = "Carolyn Abott"
 theme = "academic"
